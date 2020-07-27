@@ -41,7 +41,11 @@
 											<h1>申博文</h1>
 											<h2>南京信息工程大学</h2>
 										</header>
-										<p>这里是简介.</p>
+										<p>
+										<!-- 电子类学生大都知道IEEE, 这个IEEE就像一个大的BBS论坛，而这个协会下面有很多杂志，比如图像处理，信号处理，微波技术等。这些杂志就是论坛下的分版面。每个版面有版主（主编），版副（副主编）等职务。<br>
+										大学里的教授负责组织人力在IEEE灌水。教授灌的水被别的论坛或版面转载或引用。这就叫坑。大牛教授挖大坑，小牛教授挖小坑。同学们就在这些大坑，小坑中灌水。水越多的坑，坑就越牛，从而挖坑的教授（坑主）名气也越大。根据挖坑的大小，和水量，IEEE会评选出IEEE senior member (高级坑主)，IEEE fellow (坑王)，IEEE life fellow (终生坑王)。一般同学只要交了注册费就可以成为student member (灌水学员), 毕业后可成为member（灌水员）。<br>
+										IEEE每个版面一般会举行一年一度的版聚(IEEE symposium)。大家从四面八方聚在一起交流灌水心得。一些坑王会在版聚时介绍挖坑经验(IEEE workshop)。为了鼓励灌水学	员灌好水，为成为坑主作准备，版聚设了本年度最佳灌水奖(best student paper)。一般灌水在IEEE的发贴区(IEEE sponsored conferences)。有价值的坑或者连环坑经编辑后会保留到精华区(IEEE Transaction). -->
+										</p>
 										<ul class="actions">
 											<li><a href="#" class="button big">了解更多</a></li>
 										</ul>
@@ -51,6 +55,179 @@
 									</span>
 								</section>
 
+							<!-- Calendar -->
+							<section>
+								<div class="calendar">
+									<h1></h1>
+									<h2></h2>
+									<button class="l"> < </button> 
+									<button class="r"> > </button>
+									<div class="head">
+										<li>日</li>
+										<li>一</li>
+										<li>二</li>
+										<li>三</li>
+										<li>四</li>
+										<li>五</li>
+										<li>六</li>
+									</div>
+									<ul class="ul">
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</div>
+							
+								<script>
+									var lis = document.querySelectorAll('.ul li');
+									var h = document.querySelector('h2');
+									var h1 = document.querySelector('h1');
+									var btnl = document.querySelector('.l');//获取按钮
+									var btnr = document.querySelector('.r');
+							
+									function getD() {
+										function doub(a) { //时分秒加前缀0
+											if (a < 10) {
+												a = '0' + a;
+											}
+											return a;
+										}
+										var dat = new Date();
+										var year = dat.getFullYear(); //四位数年份
+										var mon = dat.getMonth() + 1; //getMonth [0,11]
+										var day = dat.getDay(); //getDay [0,6]
+										var d = dat.getDate();
+										var hour = dat.getHours();
+										var min = dat.getMinutes();
+										var sec = dat.getSeconds();
+										hour = doub(hour);
+										min = doub(min);
+										sec = doub(sec);
+										var DATE = {
+											Year: year,
+											Mon: mon,
+											Day: day,
+											D: d,
+											Hour: hour,
+											Min: min,
+											Sec: sec
+										}
+										return DATE;
+									}
+							
+									function date() {
+										var DATE = getD();
+										var year = DATE.Year;
+										var mon = DATE.Mon;
+										var day = DATE.Day;
+										var d = DATE.D;
+										var hour = DATE.Hour;
+										var min = DATE.Min;
+										var sec = DATE.Sec;
+										h.innerText = year + ' 年 ' + mon + ' 月 ' + d + ' 日 ';
+										h1.innerText = year + ' 年 ' + mon + ' 月 ' + d + ' 日 ' + hour + ':' + min + ':' + sec;
+										setInterval(function () {
+											var DATE = getD();
+											h1.innerText = DATE.Year + ' 年 ' + DATE.Mon + ' 月 ' + DATE.D + ' 日 ' + DATE.Hour + ':' + DATE.Min + ':' + DATE.Sec;
+										}, 1000)
+										theDate(year, mon);
+										var firstDay = new Date(year, mon - 1, 1).getDay();//得出第一天星期几
+										var today = d + firstDay - 1;
+										lis[today].style.color = 'red';
+										lis[today].className = 'today';//添加当天的样式
+							
+										btnl.onclick = function () {
+											lis[today].className = '';//清除当天的样式
+											year = year + Math.floor((mon - 2) / 12);
+											mon = (mon + 10) % 12 + 1;
+											theDate(year, mon);
+											if (mon == DATE.Mon) {
+												lis[today].className = 'today';
+												lis[today].style.color = 'red';
+											}
+										}
+										btnr.onclick = function () {
+											lis[today].className = '';//清除当天的样式
+											year = year + Math.floor(mon / 12);
+											mon = mon % 12 + 1;
+											theDate(year, mon);
+											if (mon == DATE.Mon) {
+												lis[today].className = 'today';
+												lis[today].style.color = 'red';
+											}
+										}
+										function theDate(year, mon) {
+											for (var j = 0; j < lis.length; j++) {//先清空所有li里的内容
+												lis[j].innerText = '';
+												lis[j].style.color = 'white';
+											}
+											var s1 = new Date(year, mon, 0);
+											var f = s1.getDate();//获取该月的天数
+											h.innerText = year + '年' + mon + '月';
+											var s2 = new Date(year, mon - 1, 1);
+							
+											var fir = s2.getDay();
+											for (var j = fir; j < fir + f; j++) {
+												lis[j].innerText = j - fir + 1;
+											}
+							
+											var lastMon = new Date(year, mon - 1, 0).getDate();//获取前一个月天数
+											for (var i = fir - 1; i >= 0; i--) {
+												lis[i].innerText = lastMon--;
+												lis[i].style.color = '#aaa'
+											}
+							
+											for (var k = fir + f; k < lis.length; k++) {//后一个月
+												lis[k].innerText = k - fir - f + 1;
+												lis[k].style.color = '#aaa'
+											}
+										}
+									}
+									
+									date();
+							
+								</script>
+							</section>
+							
 							<!-- Section -->
 								<section>
 									<header class="major">
@@ -61,28 +238,30 @@
 											<span class="icon fa-gem"></span>
 											<div class="content">
 												<h3>论文</h3>
-												<p>一篇 IEEE TNSE</p>
+												<p>一篇 IEEE TII</p>
+												<p>一篇 IEEE ICWS （还没参会）</p>
 											</div>
 										</article>
 										<article>
 											<span class="icon solid fa-paper-plane"></span>
 											<div class="content">
-												<h3>假期生活</h3>
-												<p></p>
+												<h3>GPA</h3>
+												<p>略高于3.75，要好好努力了！</p>
 											</div>
 										</article>
 										<article>
 											<span class="icon solid fa-rocket"></span>
 											<div class="content">
 												<h3>竞赛</h3>
-												<p>第10届校赛（个人赛）拿金了</p>
+												<p>第10届程序设计校赛（个人赛）一等奖</p>
+												<p>第11届程序设计校赛（个人赛）一等奖</p>
 											</div>
 										</article>
 										<article>
 											<span class="icon solid fa-signal"></span>
 											<div class="content">
-												<h3>心情</h3>
-												<p>工 具 人 不 配 拥 有 心 情 。</p>
+												<h3>项目</h3>
+												<p>一个餐厅点餐系统</p>
 											</div>
 										</article>
 									</div>
@@ -113,7 +292,7 @@
 										<article>
 											<a href="#" class="image"><img src="images/日记.jpg" alt="" /></a>
 											<h3>日记</h3>
-											<p>咕咕 咕咕咕咕！ ————鸽先生</p>
+											<p>明天再说！ ————鸽子先生</p>
 											<ul class="actions">
 												<li><a href="#" class="button">更多</a></li>
 											</ul>
@@ -166,51 +345,48 @@
 									</header>
 									<ul>
 										<li><a href="index.html">主页</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="generic.html">目录 2</a></li>
+										<li><a href="Guideline.html">框架帮助</a></li>
 										<li>
-											<span class="opener">Submenu</span>
+											<span class="opener">子目录</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="#">子目录 1</a></li>
+												<li><a href="#">子目录 2</a></li>
+												<li><a href="#">子目录 3</a></li>
+												<li><a href="#">子目录 4</a></li>
 											</ul>
 										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
+										<li><a href="#">目录 5</a></li>
+										<li><a href="#">目录 6</a></li>
 										<li>
-											<span class="opener">Another Submenu</span>
+											<span class="opener">子目录</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="#">子目录 1</a></li>
+												<li><a href="#">子目录 2</a></li>
+												<li><a href="#">子目录 3</a></li>
+												<li><a href="#">子目录 4</a></li>
 											</ul>
 										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
 									</ul>
 								</nav>
 
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Ante interdum</h2>
+										<h2>生活</h2>
 									</header>
 									<div class="mini-posts">
 										<article>
 											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<p>空洞生活。</p>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<p>空洞生活。</p>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<p>空洞生活。</p>
 										</article>
 									</div>
 									<ul class="actions">

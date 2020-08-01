@@ -41,17 +41,13 @@
 											<h1>申博文</h1>
 											<h2>南京信息工程大学</h2>
 										</header>
-										<p>
-										<!-- 电子类学生大都知道IEEE, 这个IEEE就像一个大的BBS论坛，而这个协会下面有很多杂志，比如图像处理，信号处理，微波技术等。这些杂志就是论坛下的分版面。每个版面有版主（主编），版副（副主编）等职务。<br>
-										大学里的教授负责组织人力在IEEE灌水。教授灌的水被别的论坛或版面转载或引用。这就叫坑。大牛教授挖大坑，小牛教授挖小坑。同学们就在这些大坑，小坑中灌水。水越多的坑，坑就越牛，从而挖坑的教授（坑主）名气也越大。根据挖坑的大小，和水量，IEEE会评选出IEEE senior member (高级坑主)，IEEE fellow (坑王)，IEEE life fellow (终生坑王)。一般同学只要交了注册费就可以成为student member (灌水学员), 毕业后可成为member（灌水员）。<br>
-										IEEE每个版面一般会举行一年一度的版聚(IEEE symposium)。大家从四面八方聚在一起交流灌水心得。一些坑王会在版聚时介绍挖坑经验(IEEE workshop)。为了鼓励灌水学	员灌好水，为成为坑主作准备，版聚设了本年度最佳灌水奖(best student paper)。一般灌水在IEEE的发贴区(IEEE sponsored conferences)。有价值的坑或者连环坑经编辑后会保留到精华区(IEEE Transaction). -->
-										</p>
+										<p>申博文，南京信息工程大学，计算机与软件学院，计算机科学与技术专业。目前已有两篇论文被录用（IEEE TII 和 IEEE ICWS），感谢<a href="https://faculty.nuist.edu.cn/xuxiaolong/zh_CN/index/87901/list/index.htm">许小龙教授</a>的指导。研究方向包括边缘计算，物联网等。</p>
 										<ul class="actions">
 											<li><a href="#" class="button big">了解更多</a></li>
 										</ul>
 									</div>
 									<span class="image object">
-										<img src="images/BowenShen.jpg" alt="" width="150" />
+										<img src="images/BowenShen.JPG" alt="" width="150" />
 									</span>
 								</section>
 
@@ -62,7 +58,7 @@
 									<h2></h2>
 									<button class="l"> < </button> 
 									<button class="r"> > </button>
-									<div class="head">
+									<div class="calendar head">
 										<li>日</li>
 										<li>一</li>
 										<li>二</li>
@@ -116,11 +112,11 @@
 										<li></li>
 									</ul>
 								</div>
-							
-								<script>
+								<script type="text/javascript" src="assets/js/calendar.js"></script>
+								<!-- <script>
 									var lis = document.querySelectorAll('.ul li');
-									var h = document.querySelector('h2');
-									var h1 = document.querySelector('h1');
+									var h = document.querySelector('.calendar h2');
+									var h1 = document.querySelector('.calendar h1');
 									var btnl = document.querySelector('.l');//获取按钮
 									var btnr = document.querySelector('.r');
 							
@@ -225,11 +221,11 @@
 									
 									date();
 							
-								</script>
+								</script> -->
 							</section>
 							
 							<!-- Section -->
-								<section>
+								<section id="one">
 									<header class="major">
 										<h2>新鲜事</h2>
 									</header>
@@ -268,25 +264,25 @@
 								</section>
 
 							<!-- Section -->
-								<section>
+								<section id="two">
 									<header class="major">
 										<h2>小文章</h2>
 									</header>
 									<div class="posts">
 										<article>
-											<a href="Notes/Note_list.html" class="image"><img src="images/笔记.jpg" alt="" /></a>
+											<a href="Note/Note_list.html" class="image"><img src="images/笔记.jpg" alt="" /></a>
 											<h3>笔记</h3>
 											<p>努力学习。</p>
 											<ul class="actions">
-												<li><a href="Notes/Note_list.html" class="button">更多</a></li>
+												<li><a href="Note/Note_list.html" class="button">更多</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/题解.jpg" alt="" /></a>
-											<h3>题解</h3>
-											<p>洛谷 TSOJ 之类的</p>
+											<a href="Blog/Blog_list.html" class="image"><img src="images/博客.jpg" alt="" /></a>
+											<h3>博客</h3>
+											<p>CSDN 之类的</p>
 											<ul class="actions">
-												<li><a href="#" class="button">更多</a></li>
+												<li><a href="Blog/Blog_list.html" class="button">More</a></li>
 											</ul>
 										</article>
 										<article>
@@ -345,7 +341,9 @@
 									</header>
 									<ul>
 										<li><a href="index.html">主页</a></li>
-										<li><a href="generic.html">目录 2</a></li>
+										<li><a href="#one">新鲜事</a></li>
+										<li><a href="#two">小文章</a></li>
+										<li><a href="generic.html">跳转页面</a></li>
 										<li><a href="Guideline.html">框架帮助</a></li>
 										<li>
 											<span class="opener">子目录</span>
@@ -356,8 +354,6 @@
 												<li><a href="#">子目录 4</a></li>
 											</ul>
 										</li>
-										<li><a href="#">目录 5</a></li>
-										<li><a href="#">目录 6</a></li>
 										<li>
 											<span class="opener">子目录</span>
 											<ul>
@@ -419,6 +415,8 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>

@@ -95,7 +95,8 @@
 			overflow: hidden;
 			position: absolute;
 			text-align: center;
-			text-indent: 7.5em;
+			text-indent: -15em;
+			white-space: nowrap;
 			top: 0;
 			width: 6em;
 			z-index: _misc(z-index-base);

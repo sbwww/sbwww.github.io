@@ -1,4 +1,4 @@
-var lis = document.querySelectorAll(".ul li");
+var lis = document.querySelectorAll(".date li");
 var h = document.querySelector(".calendar h2");
 var h1 = document.querySelector(".calendar h1");
 var btnl = document.querySelector(".l"); //获取按钮

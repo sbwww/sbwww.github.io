@@ -10,6 +10,14 @@ ul li {
   padding-left: 0;
 }
 
+.posts article .image {
+  height: 300px;
+}
+
+.posts article .image img {
+  object-fit: cover;
+}
+
 .calendar {
   overflow: hidden;
   background: #444444;

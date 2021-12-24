@@ -4,7 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@200;400;600&family=PT+Mono:wght@200;400;600&display=swap" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@200;400;600&family=PT+Mono:wght@200;400;600&display=swap" type="text/css">
+  <script type="text/javascript">
+    var pathSegmentsToKeep = 1;
+
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
   <script type="module" crossorigin src="/Slides/2021-12-28-Trailer/assets/index.a8fd73c8.js"></script>
   <link rel="modulepreload" href="/Slides/2021-12-28-Trailer/assets/vendor.a5859772.js">
   <link rel="stylesheet" href="/Slides/2021-12-28-Trailer/assets/vendor.f1948df2.css">
